@@ -24,4 +24,4 @@ jobs:
     - name: compile2
       run: make
     - name: run
-      run: ./tests/utility_fuzzer_test -max_total_time=60
+      run: ./tests/utility_fuzzer_test -max_total_time=5
