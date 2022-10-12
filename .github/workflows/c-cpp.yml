@@ -18,7 +18,7 @@ jobs:
     - name: makeFolder
       run: mkdir build
     - name: cd
-      run: cd fuzzing-example/build
+      run: cd build
     - name: compile
       run: CC=clang cmake ..
     - name: compile2
