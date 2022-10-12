@@ -13,13 +13,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: removeExisting
+      run: rm -r build
     - name: makeFolder
-      run: mkdir fuzzing-example/build
+      run: mkdir build
     - name: cd
       run: cd fuzzing-example/build
     - name: compile
       run: CC=clang cmake ..
-    - name: compile 2
+    - name: compile2
       run: make
     - name: run
       run: ./tests/utility_fuzzer_test -max_total_time=60
