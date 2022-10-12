@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: makeFolder
+      run: mkdir fuzzing-example/build
+    - name: cd
+      run: cd fuzzing-example/build
+    - name: compile
+      run: CC=clang cmake ..
+    - name: compile 2
+      run: make
+    - name: run
+      run: ./tests/utility_fuzzer_test -max_total_time=60
