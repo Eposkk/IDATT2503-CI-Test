@@ -26,7 +26,7 @@ int replace(char *c) {
     printf("&apos;");
     break;
   default:
-    printf(c);
+    printf("%s",c);
     break;
   }
   return 0;
